@@ -97,3 +97,8 @@ If you found this code useful, please cite the following paper:
 ## License
 
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+
+# Acknowledgments
+
+The authors would like to thank [Po-Sen Huang](https://posenhuang.github.io/) and Yokesh Kumar for helping the manuscript, and Li Huang for helping with code release.
