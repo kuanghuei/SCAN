@@ -109,8 +109,8 @@ def main(data_path, data_name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', default='/w/31/faghri/vsepp_data/')
-    parser.add_argument('--data_name', default='coco',
+    parser.add_argument('--data_path', default='data')
+    parser.add_argument('--data_name', default='f30k_precomp',
                         help='{coco,f30k}_precomp')
     opt = parser.parse_args()
     main(opt.data_path, opt.data_name)

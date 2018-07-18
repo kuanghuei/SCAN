@@ -16,7 +16,7 @@ import torch
 import numpy
 
 import data
-from vocab import Vocabulary, deserialize_vocab  # NOQA
+from vocab import Vocabulary, deserialize_vocab
 from model import SCAN
 from evaluation import i2t, t2i, AverageMeter, LogCollector, encode_data, shard_xattn_t2i, shard_xattn_i2t
 from torch.autograd import Variable
