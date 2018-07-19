@@ -1,6 +1,6 @@
 # Introduction
 
-This is Stacked Cross Attention Network, source code of [Stacked Cross Attention for Image-Text Matching](https://arxiv.org/abs/1803.08024) ([project page](https://github.com/kuanghuei/SCANProject)) from Microsoft AI and Research. The paper will appear in ECCV 2018. It is built on top of the [VSE++](https://github.com/fartashf/vsepp) in PyTorch.
+This is Stacked Cross Attention Network, source code of [Stacked Cross Attention for Image-Text Matching](https://arxiv.org/abs/1803.08024) ([project page](https://kuanghuei.github.io/SCANProject/)) from Microsoft AI and Research. The paper will appear in ECCV 2018. It is built on top of the [VSE++](https://github.com/fartashf/vsepp) in PyTorch.
 
 
 ## Requirements and Installation
