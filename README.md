@@ -43,17 +43,6 @@ The image features of Flickr30K and MS-COCO are available in numpy array format,
 1. Use the `bottom-up-attention/tools/generate_tsv.py` and the bottom-up attention model to extract features of image regions. The output file format will be a tsv, where the columns are ['image_id', 'image_w', 'image_h', 'num_boxes', 'boxes', 'features'].
 2. Use `util/convert_data.py` to convert the above output to a numpy array.
 
-## Evaluate pre-trained models
-
-```python
-from vocab import Vocabulary
-import evaluation
-evaluation.evalrank("$RUN_PATH/coco_scan/model_best.pth.tar", data_path="$DATA_PATH", split="test")
-```
-
-To do cross-validation on MSCOCO, pass `fold5=True` with a model trained using 
-`--data_name coco_precomp`.
-
 ## Training new models
 Run `train.py`:
 
@@ -80,6 +69,16 @@ Arguments used to train MS-COCO models:
 | SCAN i-t LSE     | `--max_violation --bi_gru --agg_func=LogSumExp --cross_attn=i2t --lambda_lse=20 --lambda_softmax=4 --num_epochs=20 --lr_update=10 --learning_rate=.0005` |
 | SCAN i-t AVG     | `--max_violation --bi_gru --agg_func=Mean --cross_attn=i2t --lambda_softmax=4 --num_epochs=20 --lr_update=10 --learning_rate=.0005` |
 
+## Evaluate trained models
+
+```python
+from vocab import Vocabulary
+import evaluation
+evaluation.evalrank("$RUN_PATH/coco_scan/model_best.pth.tar", data_path="$DATA_PATH", split="test")
+```
+
+To do cross-validation on MSCOCO, pass `fold5=True` with a model trained using 
+`--data_name coco_precomp`.
 
 ## Reference
 
@@ -99,6 +98,6 @@ If you found this code useful, please cite the following paper:
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 
-# Acknowledgments
+## Acknowledgments
 
-The authors would like to thank [Po-Sen Huang](https://posenhuang.github.io/) and Yokesh Kumar for helping the manuscript, and Li Huang for helping with code release.
+The authors would like to thank [Po-Sen Huang](https://posenhuang.github.io/) and Yokesh Kumar for helping the manuscript. We also thank Li Huang, Arun Sacheti, and Bing Multimedia team for supporting this work.
