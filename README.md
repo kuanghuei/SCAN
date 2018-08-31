@@ -43,6 +43,13 @@ The image features of Flickr30K and MS-COCO are available in numpy array format,
 1. Use the `bottom-up-attention/tools/generate_tsv.py` and the bottom-up attention model to extract features of image regions. The output file format will be a tsv, where the columns are ['image_id', 'image_w', 'image_h', 'num_boxes', 'boxes', 'features'].
 2. Use `util/convert_data.py` to convert the above output to a numpy array.
 
+
+If downloading the whole data package containing bottom-up image features for Flickr30K and MS-COCO is too slow for you, you can download the following package with everything but image features and compute image features locally from raw images.
+
+```bash
+wget https://scanproject.blob.core.windows.net/scan-data/data_no_feature.zip
+```
+
 ## Training new models
 Run `train.py`:
 
