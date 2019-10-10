@@ -105,6 +105,8 @@ def main():
     # Construct the model
     model = SCAN(opt)
 
+    best_rsum = 0
+    start_epoch = 0
     # optionally resume from a checkpoint
     if opt.resume:
         if os.path.isfile(opt.resume):
@@ -123,8 +125,7 @@ def main():
             print("=> no checkpoint found at '{}'".format(opt.resume))
 
     # Train the Model
-    best_rsum = 0
-    for epoch in range(opt.num_epochs):
+    for epoch in range(start_epoch, opt.num_epochs):
         print(opt.logger_name)
         print(opt.model_name)
 
