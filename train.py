@@ -105,12 +105,14 @@ def main():
     # Construct the model
     model = SCAN(opt)
 
+    best_rsum = 0
+    start_epoch = 0
     # optionally resume from a checkpoint
     if opt.resume:
         if os.path.isfile(opt.resume):
             print("=> loading checkpoint '{}'".format(opt.resume))
             checkpoint = torch.load(opt.resume)
-            start_epoch = checkpoint['epoch']
+            start_epoch = checkpoint['epoch'] + 1
             best_rsum = checkpoint['best_rsum']
             model.load_state_dict(checkpoint['model'])
             # Eiters is used to show logs as the continuation of another
@@ -123,8 +125,7 @@ def main():
             print("=> no checkpoint found at '{}'".format(opt.resume))
 
     # Train the Model
-    best_rsum = 0
-    for epoch in range(opt.num_epochs):
+    for epoch in range(start_epoch, opt.num_epochs):
         print(opt.logger_name)
         print(opt.model_name)
 
@@ -142,7 +143,7 @@ def main():
         if not os.path.exists(opt.model_name):
             os.mkdir(opt.model_name)
         save_checkpoint({
-            'epoch': epoch + 1,
+            'epoch': epoch,
             'model': model.state_dict(),
             'best_rsum': best_rsum,
             'opt': opt,
