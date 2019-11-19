@@ -112,7 +112,7 @@ def main():
         if os.path.isfile(opt.resume):
             print("=> loading checkpoint '{}'".format(opt.resume))
             checkpoint = torch.load(opt.resume)
-            start_epoch = checkpoint['epoch']
+            start_epoch = checkpoint['epoch'] + 1
             best_rsum = checkpoint['best_rsum']
             model.load_state_dict(checkpoint['model'])
             # Eiters is used to show logs as the continuation of another
@@ -143,7 +143,7 @@ def main():
         if not os.path.exists(opt.model_name):
             os.mkdir(opt.model_name)
         save_checkpoint({
-            'epoch': epoch + 1,
+            'epoch': epoch,
             'model': model.state_dict(),
             'best_rsum': best_rsum,
             'opt': opt,
