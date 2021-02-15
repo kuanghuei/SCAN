@@ -20,7 +20,9 @@ nltk.download()
 
 ## Download data
 
-! The data links are currently unavailable. I will find another place to host these data by next month. Sorry for the inconvenience.
+```diff
+- 02-15-2021: The data links are currently unavailable. I will find another place to host these data by next month. Sorry for the inconvenience.
+```
 
 Download the dataset files and pre-trained models. We use splits produced by [Andrej Karpathy](http://cs.stanford.edu/people/karpathy/deepimagesent/). The raw images can be downloaded from from their original sources [here](http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/KCCA.html), [here](http://shannon.cs.illinois.edu/DenotationGraph/) and [here](http://mscoco.org/).
 
