@@ -20,17 +20,13 @@ nltk.download()
 
 ## Download data
 
-```diff
-- 02-15-2021: The data links are currently unavailable. I will find another place to host these data by next month. Sorry for the inconvenience.
-```
-
 Download the dataset files and pre-trained models. We use splits produced by [Andrej Karpathy](http://cs.stanford.edu/people/karpathy/deepimagesent/). The raw images can be downloaded from from their original sources [here](http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/KCCA.html), [here](http://shannon.cs.illinois.edu/DenotationGraph/) and [here](http://mscoco.org/).
 
 The precomputed image features of MS-COCO are from [here](https://github.com/peteanderson80/bottom-up-attention). The precomputed image features of Flickr30K are extracted from the raw Flickr30K images using the bottom-up attention model from [here](https://github.com/peteanderson80/bottom-up-attention). All the data needed for reproducing the experiments in the paper, including image features and vocabularies, can be downloaded from:
 
 ```bash
-wget https://scanproject.blob.core.windows.net/scan-data/data.zip
-wget https://scanproject.blob.core.windows.net/scan-data/vocab.zip
+wget https://iudata.blob.core.windows.net/scan/data.zip
+wget https://iudata.blob.core.windows.net/scan/vocab.zip
 ```
 
 We refer to the path of extracted files for `data.zip` as `$DATA_PATH` and files for `vocab.zip` to `./vocab` directory. Alternatively, you can also run vocab.py to produce vocabulary files. For example, 
@@ -48,11 +44,11 @@ The image features of Flickr30K and MS-COCO are available in numpy array format,
 2. Use `util/convert_data.py` to convert the above output to a numpy array.
 
 
-If downloading the whole data package containing bottom-up image features for Flickr30K and MS-COCO is too slow for you, you can download the following package with everything but image features and compute image features locally from raw images.
+<!-- If downloading the whole data package containing bottom-up image features for Flickr30K and MS-COCO is too slow for you, you can download the following package with everything but image features and compute image features locally from raw images.
 
 ```bash
 wget https://scanproject.blob.core.windows.net/scan-data/data_no_feature.zip
-```
+``` -->
 
 ## Training new models
 Run `train.py`:
